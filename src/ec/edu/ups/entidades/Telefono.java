@@ -1,4 +1,4 @@
-package ec.edu.ups;
+package ec.edu.ups.entidades;
 
 import java.io.Serializable;
 
@@ -47,3 +47,4 @@ public class Telefono implements Serializable{
 	
 
 }
+  

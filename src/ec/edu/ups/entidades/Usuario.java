@@ -1,4 +1,4 @@
-package ec.edu.ups;
+package ec.edu.ups.entidades;
 
 import java.io.Serializable;
 
@@ -10,6 +10,7 @@ public class Usuario  implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	
+	private int id;
 	private String cedula;
 	private String nombre;
 	private String apellido;
@@ -17,12 +18,15 @@ public class Usuario  implements Serializable{
 	private String clave;
 	
 	
-	public Usuario() {
+	public Usuario(int id, String cedula, String nombre, String apellido, String correo, String clave) {
 		super();
-		// TODO Auto-generated constructor stub
+		this.id = id;
+		this.cedula = cedula;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.correo = correo;
+		this.clave = clave;
 	}
-	
-	
 	public String getCedula() {
 		return cedula;
 	}
@@ -53,5 +57,15 @@ public class Usuario  implements Serializable{
 	public void setClave(String clave) {
 		this.clave = clave;
 	}
-	
+
+
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+		
 }
