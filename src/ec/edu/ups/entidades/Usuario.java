@@ -4,12 +4,8 @@ import java.io.Serializable;
 
 public class Usuario  implements Serializable{
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
-	
-	
 	private int id;
 	private String cedula;
 	private String nombre;
@@ -18,8 +14,13 @@ public class Usuario  implements Serializable{
 	private String clave;
 	
 	
-	public Usuario(int id, String cedula, String nombre, String apellido, String correo, String clave) {
+	public Usuario() {
 		super();
+		
+	}
+	
+	public Usuario(int id, String cedula, String nombre, String apellido, String correo, String clave) {
+		
 		this.id = id;
 		this.cedula = cedula;
 		this.nombre = nombre;
@@ -27,6 +28,7 @@ public class Usuario  implements Serializable{
 		this.correo = correo;
 		this.clave = clave;
 	}
+	 
 	public String getCedula() {
 		return cedula;
 	}

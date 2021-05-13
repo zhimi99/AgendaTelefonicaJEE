@@ -12,44 +12,44 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, Integer> implements 
 
 		@Override
 		public void createTable() {
-			conexion.update("DROP TABLE IF EXISTS Persona");
-			conexion.update("CREATE TABLE Persona (" + "ID INT NOT NULL, " + "CEDULA VARCHAR(10), "
+			conexion.update("DROP TABLE IF EXISTS Usuario");
+			conexion.update("CREATE TABLE Usuario (" + "ID INT NOT NULL, " + "CEDULA VARCHAR(10), "
 					+ "NOMBRE VARCHAR(255), APELLIDO VARCHAR(255)" + ", PRIMARY KEY (ID))");
 		}
 
 		@Override
 		public void create(Usuario usuario) {
-			conexion.update("INSERT Persona VALUES (" + usuario.getNombre() + ", '" + usuario.getApellido() + "', '"
-					+ usuario.getCorreo() + "', '" + usuario.getClave() + "')");
+			conexion.update("INSERT Usuario VALUES (" + usuario.getId() + ",'" +usuario.getCedula() + "','" + usuario.getNombre() + "', '"
+					+ usuario.getApellido() + "','" + usuario.getCorreo()+"','" + usuario.getClave() + "')");
+			
 		}
 
-		
 		@Override
 		public Usuario read(Integer id) {
 			Usuario usuario = null;
-			ResultSet rs = conexion.query("SELECT * FROM Persona WHERE id=" + id);
+			ResultSet rs = conexion.query("SELECT * FROM usuario WHERE id=" + id);
 			try {
 				if (rs != null && rs.next()) {
 					usuario = new Usuario(rs.getInt("id"),rs.getString("cedula"), rs.getString("nombre"),
 							rs.getString("apellido"),rs.getString("correo"),rs.getString("clave"));
 				}
 			} catch (SQLException e) {
-				System.out.println(">>>WARNING (JDBCPersonaDAO:read): " + e.getMessage());
+				System.out.println(">>>WARNING (JDBCUsuarioDAO:read): " + e.getMessage());
 			}
 
 			return usuario;
 		}
 
 		@Override
-		public void update(Usuario persona) {
-			conexion.update("UPDATE Persona SET cedula = '" + persona.getCedula() + "', nombre = '" + persona.getNombre()
-					+ "', apellido = '" + persona.getApellido() + "' WHERE id = " + persona.getId());
+		public void update(Usuario usuario) {
+			conexion.update("UPDATE Usuario SET cedula = '" + usuario.getCedula() + "', nombre = '" + usuario.getNombre()
+					+ "', apellido = '" + usuario.getApellido() + "' WHERE id = " + usuario.getId());
 
 		}
 
 		@Override
-		public void delete(Usuario persona) {
-			conexion.update("DELETE FROM Persona WHERE id = " + persona.getId());
+		public void delete(Usuario usuario) {
+			conexion.update("DELETE FROM Usuario WHERE id = " + usuario.getId());
 
 		}
 
