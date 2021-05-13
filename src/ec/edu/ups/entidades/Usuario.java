@@ -6,7 +6,6 @@ public class Usuario  implements Serializable{
 
 	
 	private static final long serialVersionUID = 1L;
-	private int id;
 	private String cedula;
 	private String nombre;
 	private String apellido;
@@ -19,9 +18,8 @@ public class Usuario  implements Serializable{
 		
 	}
 	
-	public Usuario(int id, String cedula, String nombre, String apellido, String correo, String clave) {
-		
-		this.id = id;
+	public Usuario(String cedula, String nombre, String apellido, String correo, String clave) {
+
 		this.cedula = cedula;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -58,16 +56,6 @@ public class Usuario  implements Serializable{
 	}
 	public void setClave(String clave) {
 		this.clave = clave;
-	}
-
-
-	public int getId() {
-		return id;
-	}
-
-
-	public void setId(int id) {
-		this.id = id;
 	}
 		
 }

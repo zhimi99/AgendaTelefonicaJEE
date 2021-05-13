@@ -6,14 +6,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import ec.edu.ups.dao.DAOFactory;
 import ec.edu.ups.dao.UsuarioDAO;
 import ec.edu.ups.entidades.Usuario;
 
-/**
- * Servlet implementation class CrearUsuarioController
- */
+
 @WebServlet("/CrearUsuarioController")
 public class CrearUsuarioController extends HttpServlet {
 	
@@ -38,8 +35,7 @@ public class CrearUsuarioController extends HttpServlet {
 		//doGet(request, response);
 		
 		String url = null;
-		try {
-			usuario.setId(Integer.valueOf(request.getParameter("id")));
+		try {			
 			usuario.setCedula(request.getParameter("cedula"));
 			usuario.setNombre(request.getParameter("nombre"));
 			usuario.setApellido(request.getParameter("apellido"));	
