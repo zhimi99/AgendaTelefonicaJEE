@@ -15,7 +15,6 @@ public class Usuario  implements Serializable{
 	
 	public Usuario() {
 		super();
-		
 	}
 	
 	public Usuario(String cedula, String nombre, String apellido, String correo, String clave) {

@@ -12,7 +12,7 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, String> implements U
 	
 		public void createTable() {
 			conexion.update("DROP TABLE IF EXISTS Usuario");
-			conexion.update("CREATE TABLE Usuario (" + "CEDULA INT NOT NULL, "
+			conexion.update("CREATE TABLE Usuario (" + "CEDULA VARCHAR(10) NOT NULL, "
 					+ "NOMBRE VARCHAR(255), APELLIDO VARCHAR(255), CORREO VARCHAR(255), CLAVE VARCHAR(255)" + ", PRIMARY KEY (CEDULA))");
 		}
 		

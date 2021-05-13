@@ -14,6 +14,20 @@ public class Telefono implements Serializable{
 	private String tipo;
 	private String operadora;
 	private Usuario usuCedula;
+	
+	public Telefono() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Telefono(int codigo, String numero, String tipo, String operadora) {
+	
+		this.codigo = codigo;
+		this.numero = numero;
+		this.tipo = tipo;
+		this.operadora = operadora;
+	}
+	
 	public int getCodigo() {
 		return codigo;
 	}
@@ -45,6 +59,5 @@ public class Telefono implements Serializable{
 		this.usuCedula = usuCedula;
 	}
 	
-
 }
   
