@@ -18,8 +18,8 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 		
 		
 		public void create(Telefono telefono) {
-			conexion.update("INSERT Usuario VALUES (" + telefono.getCodigo() + ",'" +telefono.getNumero() + "','" + telefono.getTipo() + "', '"
-					+ telefono.getOperadora() + "','" + telefono.getUsuCedula() + "')");
+			conexion.update("INSERT Telefono VALUES (" + telefono.getCodigo() + ",'" +telefono.getNumero() + "','" + telefono.getTipo() + "', '"
+					+ telefono.getOperadora() + "','" + telefono.getUsuCedula().getCedula() + "')");
 		}
 		
 		
@@ -32,7 +32,7 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 							rs.getString("tipo"),rs.getString("operadora"));
 				}
 			} catch (SQLException e) {
-				System.out.println(">>>WARNING (JDBCUsuarioDAO:read): " + e.getMessage());
+				System.out.println(">>>WARNING (JDBCTelefonoDAO:read): " + e.getMessage());
 			}
 
 			return telefono;
@@ -41,13 +41,13 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 		
 		public void update(Telefono telefono) {
 			conexion.update("UPDATE Telefono SET codigo = '" + telefono.getCodigo() + "', numero = '" + telefono.getNumero()
-					+ "', tipo = '" + telefono.getTipo() + "', operador = '" + telefono.getUsuCedula() + "' WHERE codigo = " + telefono.getCodigo());
+					+ "', tipo = '" + telefono.getTipo() + "', operador = '" + telefono.getOperadora() + "' WHERE usu_cedula = " + telefono.getUsuCedula().getCedula());
 
 		}
 
 		
 		public void delete(Telefono telefono) {
-			conexion.update("DELETE FROM Telefono WHERE codigo = " + telefono.getCodigo());
+			conexion.update("DELETE FROM Telefono WHERE usu_cedula = " + telefono.getUsuCedula().getCedula());
 
 		}
 
@@ -61,7 +61,7 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 				}
 				
 			} catch (SQLException e) {
-				System.out.println(">>>WARNING (JDBCUsuarioDAO:find): " + e.getMessage());
+				System.out.println(">>>WARNING (JDBCTelefonoDAO:find): " + e.getMessage());
 			}
 			return list;
 		}
