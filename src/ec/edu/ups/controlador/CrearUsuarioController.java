@@ -43,7 +43,7 @@ public class CrearUsuarioController extends HttpServlet {
 			usuario.setClave(request.getParameter("clave"));
 			usuarioDao.create(usuario);			
 			
-			url = "/index.html";
+			url = "HTMLs/crear_usuario.html";
 		} catch (Exception e) {
 			url = "/JSPs/error.jsp";
 		}

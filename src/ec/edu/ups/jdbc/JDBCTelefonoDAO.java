@@ -23,9 +23,29 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 		}
 		
 		
-		public Telefono read(String usu_cedula) {
+		public Telefono read(String usuCedula) {
 			Telefono telefono = null;
-			ResultSet rs = conexion.query("SELECT * FROM Telefono WHERE usu_cedula=" + usu_cedula);
+			
+			//SELECT nombre,numero, tipo, operadora FROM jee.Telefono,  jee.Usuario where cedula = usuCedula;
+			ResultSet rs = conexion.query("SELECT * FROM Telefono WHERE usuCedula=" + usuCedula);
+			try {
+				if (rs != null && rs.next()) {
+					telefono = new Telefono(rs.getInt("codigo"), rs.getString("numero"),
+							rs.getString("tipo"),rs.getString("operadora"));
+				}
+			} catch (SQLException e) {
+				System.out.println(">>>WARNING (JDBCTelefonoDAO:read): " + e.getMessage());
+			}
+
+			return telefono;
+		}
+		
+		//metodo verificar aaa---
+		public Telefono readLogin(String a, String b) {
+			Telefono telefono = null;
+			
+			//SELECT nombre,numero, tipo, operadora FROM jee.Telefono,  jee.Usuario where cedula = usuCedula;
+			ResultSet rs = conexion.query("SELECT * FROM Telefono WHERE usuCedula=?" );
 			try {
 				if (rs != null && rs.next()) {
 					telefono = new Telefono(rs.getInt("codigo"), rs.getString("numero"),
@@ -41,13 +61,13 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 		
 		public void update(Telefono telefono) {
 			conexion.update("UPDATE Telefono SET codigo = '" + telefono.getCodigo() + "', numero = '" + telefono.getNumero()
-					+ "', tipo = '" + telefono.getTipo() + "', operador = '" + telefono.getOperadora() + "' WHERE usu_cedula = " + telefono.getUsuCedula().getCedula());
+					+ "', tipo = '" + telefono.getTipo() + "', operador = '" + telefono.getOperadora() + "' WHERE usuCedula = " + telefono.getUsuCedula().getCedula());
 
 		}
 
 		
 		public void delete(Telefono telefono) {
-			conexion.update("DELETE FROM Telefono WHERE usu_cedula = " + telefono.getUsuCedula().getCedula());
+			conexion.update("DELETE FROM Telefono WHERE usuCedula = " + telefono.getUsuCedula().getCedula());
 
 		}
 

@@ -1,6 +1,7 @@
 package ec.edu.ups.entidades;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Usuario  implements Serializable{
 
@@ -11,6 +12,7 @@ public class Usuario  implements Serializable{
 	private String apellido;
 	private String correo;
 	private String clave;
+	private List<Telefono> telefonoList;
 	
 	
 	public Usuario() {
@@ -24,6 +26,7 @@ public class Usuario  implements Serializable{
 		this.apellido = apellido;
 		this.correo = correo;
 		this.clave = clave;
+		
 	}
 	 
 	public String getCedula() {
@@ -55,6 +58,14 @@ public class Usuario  implements Serializable{
 	}
 	public void setClave(String clave) {
 		this.clave = clave;
+	}
+
+	public List<Telefono> getTelefonoList() {
+		return telefonoList;
+	}
+
+	public void setTelefonoList(List<Telefono> telefonoList) {
+		this.telefonoList = telefonoList;
 	}
 		
 }
