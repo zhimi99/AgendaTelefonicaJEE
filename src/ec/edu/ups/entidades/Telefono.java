@@ -19,12 +19,13 @@ public class Telefono implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Telefono(int codigo, String numero, String tipo, String operadora) {
+	public Telefono(int codigo, String numero, String tipo, String operadora,Usuario usuCedula) {
 	
 		this.codigo = codigo;
 		this.numero = numero;
 		this.tipo = tipo;
 		this.operadora = operadora;
+		this.usuCedula  = usuCedula;
 	}
 	
 	public int getCodigo() {

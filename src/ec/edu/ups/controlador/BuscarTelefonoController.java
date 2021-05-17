@@ -47,7 +47,7 @@ public class BuscarTelefonoController extends HttpServlet {
 		String url = null;
 		try {
 			int codigo = Integer.valueOf(request.getParameter("codigo"));
-			telefono = telefonoDAO.read(""+codigo);//verificar entrada int o string
+			telefono = telefonoDAO.read(codigo);//verificar entrada int o string
 			request.setAttribute("telefono", telefono);
 			url = "/JSPs/buscar_telefono.jsp";
 		} catch (Exception e) {
