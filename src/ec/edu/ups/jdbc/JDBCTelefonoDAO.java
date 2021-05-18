@@ -55,13 +55,13 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, Integer> implement
 		
 		public void update(Telefono telefono) {
 			conexion.update("UPDATE Telefono SET codigo = '" + telefono.getCodigo() + "', numero = '" + telefono.getNumero()
-					+ "', tipo = '" + telefono.getTipo() + "', operador = '" + telefono.getOperadora() + "' WHERE usuCedula = " + telefono.getUsuCedula().getCedula());
+					+ "', tipo = '" + telefono.getTipo() + "', operador = '" + telefono.getOperadora() + "' WHERE codigo = " + telefono.getCodigo());
 
 		}
 
 		
 		public void delete(Telefono telefono) {
-			conexion.update("DELETE FROM Telefono WHERE usuCedula = " + telefono.getUsuCedula().getCedula());
+			conexion.update("DELETE FROM Telefono WHERE codigo = " + telefono.getCodigo());
 
 		}
 
@@ -94,8 +94,6 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, Integer> implement
 			}
 			return list;
 		}
-		
-		
-		
+				
 	}
 

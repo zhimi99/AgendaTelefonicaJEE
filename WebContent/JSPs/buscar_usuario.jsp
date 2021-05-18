@@ -17,7 +17,7 @@
 	<p>Apellido: ${u.apellido}</p>
 	<p>Correo: ${u.correo}</p>
 	
-	<a href="/AgendaTelefonicaJEE/index.html">Regresar al index</a>
+	<a href="/AgendaTelefonicaJEE/indexp.html">Regresar al index</a>
 	
 </body>
 </html>

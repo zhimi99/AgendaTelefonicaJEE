@@ -1,27 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>REGISTRAR NUEVO USUARIO</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="css/formulario.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
 </head>
 <body>
-
-<h1>Ingresar a la agenda</h1>
-
-	<form action="/AgendaTelefonicaJEE/LoginController" method="post">
-		
-		
-		<label for="correo">Correo: </label>
-		<input type="text" name="correo" placeholder="ingrese su  correo..."/>
-		<br/>
-		
-		<label for="clave">clave: </label>
-		<input type="text" name="clave" placeholder="ingrese la clave..."/>
-		<br/>
-		
-		<input type="submit" value="Aceptar"/>
-		<input type="reset" value="Cancelar"/>
-	</form>
+   <br/>
+   <br/>
+   <h3 id="titulo" >--- <img src="IMG/im16_opt.png"> --- LOGIN --- <img src="IMG/im16_opt.png"> --- </h3>
+   <form id="form2" action="/AgendaTelefonicaJEE/LoginController" method="post">
+		<div class="col">
+        	 <p>Usuario <input type="text" placeholder="Ingrese su correo" name="correo"></p>
+      	</div>
+      	<div class="col">
+        	 <p>Clave : <input type="password" placeholder="Ingrese su contraseña" name="clave"></p>
+      	</div>
+      	<div class="menu01">
+			<input type="submit" value="INGRESAR" onclick="location='index.html'">
+		</div>		
+		<div class="menu">
+			<ul id="ul1" class="nav nav-tabs" role="tablist">
+				<li id="li1" class="nav-item"><a class="nav-link " href="indexp.html">  REGRESAR A LA PAGINA PRINCIPAl  </a></li>
+			    <li id="li1" class="nav-item"><a class="nav-link " href="registro.html">  REGISTRARSE  </a></li>
+			</ul>
+		</div>
+    </form>
 
 </body>
 </html>

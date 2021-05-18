@@ -10,13 +10,13 @@
 <title>Persona Encontrada</title>
 </head>
 <body>
-	<a href="/AgendaTelefonicaJEE/LoginUsuarioController?logout">Cerrar sesion</a>
+	<a href="/AgendaTelefonicaJEE/LoginController?logout">Cerrar sesion</a>
 	<c:set var="u" scope="request" value="${usuario}" />
 	<h1>Bienvenido</h1>
 	<p> Nombre: ${u.nombre}</p>	
 	<a href="/AgendaTelefonicaJEE/JSPs/crearTelefono.jsp">Agregar nuevo telefono</a>
 	<div>
-		<form id="form-1" action="/AgendaTelefonicaJEE/BuscarUsuarioContactoController" method="get">
+		<form id="form-1" action="/AgendaTelefonicaJEE/BuscarUsuarioController" method="get">
 		<label for="input-1">Buscar contacto:</label>
 		<input id="identificacion" name="identificacion" placeholder="Correo/cedula" type="text"/>
 		<input id="cedula" name="cedula" placeholder="Text" type="text" hidden="true" value="${u.cedula}"/>

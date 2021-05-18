@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Portal de la agenda telefonica</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+	
+</head>
+
+<body>
+	<header id="main-header">
+		<div class="menu">
+			<h1>
+				<img src="IMG/agenda01.png"> Agenda telefónica
+			</h1>
+			<ul class="nav nav-tabs" role="tablist">
+			    <li class="nav-item"><a class="nav-link " href="#div1">
+				    <img src="IMG/im15_opt01.png">
+			    </a></li>
+				<li class="nav-item"><a class="nav-link " href="#div1">INICIO</a></li>
+				<li class="nav-item"><a class="nav-link " href="#div2">AL REGISTRARTE PODRÁS</a></li>
+				<li class="nav-item"><a class="nav-link " href="#div3">COMENTARIOS</a></li>
+				<li class="nav-item"><a class="nav-link " href="#div4">VISIÓN</a></li>
+				<li class="nav-item"><a class="nav-link " href="#div5">INFORMACIÓN - CONTÁCTANOS</a></li>
+				<li class="nav-item"><a class="nav-link " href="registro.html">REGISTRARSE</a></li>
+				<li class="nav-item"><a class="nav-link " href="login.html">LOGUEARSE</a></li>
+			</ul>
+		</div>
+	</header>
+
+  <section id="main-content">
+		<div id="div1" >
+			<br>
+			<h3>Porqué tener una agenda organizada</h3>
+			<br>
+			<div id="div1-1">
+				<p>Permite estar al tanto de todas las actividades pendientes,
+					del orden en el que debemos ejecutar tareas, y también alberga
+					nuestros contactos, los datos y detalles de interés, e incluso
+					algunas cosas más.</p>
+			</div>
+	
+			<div id="div1-2">
+				<img src="IMG/chica.png">
+			</div>
+		</div>
+		
+		<div id="div2">
+		    <br>
+			<h1>Al Registrarte podrás</h1>
+			<a><img id="imagen" src="IMG/im1.png">Agregar telefonos</a> 
+			<a><img id="imagen" src="IMG/im7.png">Configura Cuenta</a> 
+			<a><img id="imagen" src="IMG/im3.png">Ver tus telefonos</a>
+			<a><img id="imagen" src="IMG/im6.png">Enviar Emails</a>
+		</div>
+		
+	   	<div id="div3" >
+			<h3>Comentarios de la Pagina</h3>
+			<br>
+			<div id="div3-1">
+				<img id="imagen" src="IMG/im8.jpg">
+				<p>Todo lo que necesitas para lograr tus objetivos ya está en ti.</p>
+			</div>
+			<div id="div3-2">
+				<img id="imagen" src="IMG/im9.png"><p>No importa lo lento que vayas, siempre y cuando no te
+					detengas.</p>
+			</div>
+			<div id="div3-1">
+				<img id="imagen" src="IMG/im10.jpg"><p>No vas a dominar el resto de tu vida en un día. Relájate.
+					Domina el día. Entonces sigue haciendo eso todos los días.</p>
+			</div>
+			<div id="div3-2">
+				<img id="imagen" src="IMG/im11.jpg">
+				<p>A veces se necesita una ruptura abrumadora para tener un avance innegable.</p>
+			</div>
+		</div>
+	
+	
+		<div id="div4" >
+		<br/>
+		<br/>
+			<h1>Traer la inspiración y la innovación a cada Usuario Registrado.
+			    <br/>
+			    integridad, privacidad, utilidad.
+			</h1>
+			<br/>
+			<br/>
+		</div>
+		
+	   	<div id="div5" >
+	   	<h3>Nuestra Información - Contáctos</h3>
+			<div id="div4-1">
+				<img id="imagen" src="IMG/im12.jpg">
+			</div>
+				<div id="div4-2">
+				<p>Christian Zhiminaicela
+				   <br/>
+				   Estudiante de Ing. de Sistemas
+				   <br/>
+				   Correo
+				   <br/>
+				</p>
+			</div>
+			<div id="div4-1">
+				<img id="imagen" src="IMG/im13.jpg">
+			</div>
+			<div id="div4-2">
+				<p>Mónica Morocho
+				    <br/>
+				    Estudiante de Ing. de Sistemas
+				   <br/>
+				   Correo
+				   <br/>
+				</p>
+			</div>
+			
+			<form action="/AgendaTelefonicaJEE/CrearTelefonoController" method="post">
+				<p >Para:  <input type="email" placeholder="ingrese el destinatario" name="destinatario"></p>
+				<p >Asunto: <input type="text" placeholder="ingrese el motivo del mensaje" name="asunto"></p>
+				<p >Mensaje: <textarea type="text" placeholder="ingrese el motivo del mensaje" name="mesage" rows="4" cols="50"></textarea></p> 
+				<p ><input type="submit" value="Envia">
+			</form>
+		<br/>
+	    <br/>
+		</div>
+	</section>
+	<footer id="main-footer">
+		<div id="menuid">
+			<ul class="nav nav-tabs" role="tablist">
+				<li class="nav-item"><a class="nav-link " href="index.html">INICIO</a></li>
+				<li class="nav-item"><a class="nav-link " href="registro.html">REGISTRARSE</a></li>
+				<li class="nav-item"><a class="nav-link " href="login.html">LOGIN</a></li>
+			</ul>
+		</div>
+	</footer> 
+	
+</body>
+</html>

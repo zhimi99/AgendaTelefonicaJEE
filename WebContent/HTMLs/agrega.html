@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Agregar Telefono</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/formulario.css">
+	 
+</head>
+
+<body>
+
+  <div id="div3" class="tab-content">
+		<div id="div3" class="container tab-pane active">
+		<br/>
+		 <h3>-- <img src="IMG/telefono.png"> -- AGREGAR TELEFÓNO -- <img src="IMG/telefono.png"> --</h3>
+			<form  action="/AgendaTelefonicaJEE/CrearTelefonoController" method="post">
+			    <div class="col">
+        			 <p>Numero </p>
+        			 <input type="number" placeholder="ingrese su numero" name="numero">
+      			</div>
+			    <div class="col">
+			        <p>Tipo </p>
+			        <input type="text" placeholder="ingrese su tipo de telefóno" name="tipo">
+			    </div>
+			    <div class="col">
+        			 <p>Operadora </p>
+        			 <input type="text" placeholder="ingrese la operadora" name="operadora">
+      			</div>
+      			<div class="menu">
+					<input type="submit" value="GUARDAR" >
+				</div>
+			    <div class="menu">
+					<ul class="nav nav-tabs" role="tablist">
+						<li class="nav-item"><a class="nav-link " href="indexp.html">  REGRESAR A LA PAGINA PRINCIPAl  </a></li>
+			    		<li  class="nav-item"><a class="nav-link " href="login.html">  LOGUEARSE  </a></li>
+					</ul>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

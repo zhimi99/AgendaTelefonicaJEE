@@ -1,6 +1,8 @@
 package ec.edu.ups.controlador;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,8 +21,8 @@ public class CrearTelefonoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private TelefonoDAO telefonoDao;
 	private Telefono telefono;
-	UsuarioDAO udao;
-	Usuario u;
+	private UsuarioDAO UsuarioDAO;
+	private Usuario usuario;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -29,38 +31,48 @@ public class CrearTelefonoController extends HttpServlet {
     public CrearTelefonoController() {
     	telefonoDao = DAOFactory.getFactory().getTelefonoDAO();
 		telefono = new Telefono();
-		udao = DAOFactory.getFactory().getUsuarioDAO();
-		u = new Usuario();
+		UsuarioDAO = DAOFactory.getFactory().getUsuarioDAO();
+		usuario = new Usuario();
     }
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
     @Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//doGet(request, response);
-		
 		String url = null;
-		try {		
-			String usuCedula = request.getParameter("usuCedula");
-			
-			//u = usuarioDAO.red
-			
-			telefono.setCodigo(Integer.parseInt(request.getParameter("codigo")));
-			telefono.setNumero(request.getParameter("numero"));
-			telefono.setTipo(request.getParameter("tipo"));	
-			telefono.setOperadora(request.getParameter("operadora"));
-			u.setCedula(request.getParameter("usuCedula"));
-			telefono.getUsuCedula().setCedula(request.getParameter("usuCedula"));
-			
-			telefonoDao.create(telefono);			
-			
-			url = "HTMLs/crear_Telefono.html";
+		try {
+			System.out.println("Guardando...");
+			String ced = request.getParameter("usuario");
+			System.out.println("Cedula: "+ced);
+			usuario = UsuarioDAO.read(ced);
+			System.out.println("Usuario: "+usuario.toString());
+			if (usuario!=null) {
+				String numero = request.getParameter("numero");
+				String tipo = request.getParameter("tipo");
+				String operadora = request.getParameter("operadora");
+				telefono.setCodigo(0);
+				telefono.setNumero(numero);
+				telefono.setTipo(tipo);
+				telefono.setOperadora(operadora);
+				telefono.setUsuCedula(usuario);
+				telefonoDao.create(telefono);
+				PrintWriter out = response.getWriter();
+				out.println("<p>Telefono agregado correctamente</p>");
+				out.println("<a href='/AgendaTelefonicaJEE/JSPs/crearTelefono.jsp'>Volver</a>");
+				out.println("</body></html>");
+				
+			}else {
+				System.out.println("Usuario no encontrado.");
+				url = "/JSPs/error.jsp";
+			}
 		} catch (Exception e) {
+			System.out.println("Error crear telefono=> "+e.getMessage());
 			url = "/JSPs/error.jsp";
 		}
-		getServletContext().getRequestDispatcher(url).forward(request, response);		
+		getServletContext().getRequestDispatcher(url);
 	}
     
 }

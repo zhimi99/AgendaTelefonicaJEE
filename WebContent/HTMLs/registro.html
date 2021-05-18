@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Registrar Nuevo Usuario</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/formulario.css">
+	 
+</head>
+
+<body>
+
+  <div id="div3" class="tab-content">
+        <br/>
+		<div id="div3" class="container tab-pane active">
+		 <h3>-- <img src="IMG/usuario.png"> -- REGISTRO DE USUARIO -- <img src="IMG/usuario.png"> --</h3>
+			
+			<form id="validationForm" name="validationForm" action="/AgendaTelefonicaJEE/CrearUsuarioController" method="post">
+			    <div class="col">
+        			 <p>Cedula </p>
+        			 <input type="number" id="cedula" placeholder="ingrese su cedula" name="cedula" onkeyup="validar()" onblur="validar()">
+        			 <div id="message" style="position: absolute; left: 10px; top: 50px; background-color: Yellow; z-index: 10" hidden>
+                           Máximo 10 digitos.
+                     </div>
+      			</div>
+			    <div class="col">
+			        <p>Nombre </p>
+			        <input type="text" id="nombre" placeholder="ingrese su nombre" name="nombre" onkeyup="validar1()" onblur="validar()">
+			        <div id="message1" style="position: absolute; left: 10px; top: 50px; background-color: Yellow; z-index: 10" hidden>
+                           Introduzca solo letras.
+                     </div>
+			    </div>
+			    <div class="col">
+        			 <p>Apellido </p>
+        			 <input type="text" id="apellido" placeholder="ingrese su apellido" name="apellido" onkeyup="validar()" onblur="validar()" >
+        			 <div id="message1" style="position: absolute; left: 10px; top: 50px; background-color: Yellow; z-index: 10" hidden>
+                           Introduzca solo letras.
+                     </div>
+      			</div>
+			    <div class="col">
+			        <p>Correo </p>
+			        <input type="email" id="email" placeholder="ingrese su correo" name="correo" onkeyup="validar()" onblur="validar()" >
+			        <div id="message3" style="position: absolute; left: 10px; top: 50px; background-color: Yellow; z-index: 10" hidden>
+                           Correo no permitido.
+                     </div>
+			    </div>
+			    <div class="col">
+			        <p>Clave </p>
+			        <input type="password" id="clave" placeholder="ingrese su clave" name="clave" onkeyup="validar()" onblur="validar()" >
+			        <div id="message4" style="position: absolute; left: 10px; top: 50px; background-color: Yellow; z-index: 10" hidden>
+                           Contraseña incorrecta, lo cumple con las condiciones propuesta:
+                           <br/>
+                           Maximo 8 caracteres
+                           <br/>
+                           No se permite caracteres especiales.
+                     </div>
+			    </div>
+			    <div class="menu">
+					<input type="submit" value="GUARDAR" >
+					
+				</div>
+			    <div class="menu">
+					<ul class="nav nav-tabs" >
+						<li id="li1" class="nav-item"><a class="nav-link " href="indexp.html">  REGRESAR A LA PAGINA PRINCIPAl  </a></li>
+			    		<li class="nav-item"><a class="nav-link " href="agrega.html">AGREGAR NUMETO TELEFONICO</a></li>
+			    		<li id="li1" class="nav-item"><a class="nav-link " href="login.html">  LOGUEARSE  </a></li>
+					</ul>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+<script src="../JSPs/validarFormularios.js"></script>
+</html>

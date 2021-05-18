@@ -1,19 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>PORTAL DE LA AGENDA TELEFONICA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/formulario.css">
 </head>
-<body>
 
-<h1>Aplicación De Agenda Telefonica</h1>
-	<h2>Usando Servlets, JSP, JDBC con DAO</h2>
-	<ul>
-		<li><a href="HTMLs/crear_usuario.html">LOGIN</a></li>
-		<li><a href="HTMLs/crear_usuario.html">Crear persona</a></li>
-		<li><a href="HTMLs/crear_Telefono.html">Crear Num Telef</a></li>
-		
-	</ul>
+<body>
+  
+    <div >
+		<ul class="nav nav-pills" role="tablist">
+			<li><a href="index.html">INICIO</a></li>
+            <li><a href="agrega2.html">AGREGAR TELEFÓNO</a></li>
+            <li><a href="listar.html">BUSCAR</a></li>
+		</ul>
+	
+	</div>
+	
+	<div id="home" >
+	
+	    <h3>BIENVENIDO A TU AGENDA TELEFONICA</h3>
+	    
+		<form id="form41" action="" method="post">
+	  	     <div>
+		          <div class="info">
+			            <p>Cedula </p>
+			            <p>Nombre </p>
+			            <p>Apellido </p>
+			            <p>Correo </p>
+			            <p>Clave </p>
+		          </div>
+	        </div>
+	        <div class="usu">
+	            <img src="IMG/16363.png">
+	        </div>
+	    </form>> 
+
+        <form id="form41" action="" method="post">
+              <h3 id="titulo03"><img src="IMG/telefono.png"> LISTA DE TELEFONOS</h3>    
+              <table class="table table-hover">
+                     <thead>
+				           <tr>
+				               <th>Numero</th>
+				               <th>Tipo</th>
+				                <th>Operadora</th>
+				            </tr>
+              		  </thead>
+		              <tbody>
+				             <tr>
+				                  <td>john@example.com</td>
+				                  <td>Doe</td>
+				                  <td>john@example.com</td>
+				                </tr>
+		               </tbody>
+            	</table>
+   		</form> 
+	</div>
 
 </body>
 </html>

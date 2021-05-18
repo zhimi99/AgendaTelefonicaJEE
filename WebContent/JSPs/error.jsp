@@ -9,6 +9,6 @@
 </head>
 <body>
 	<h1>Hubo un error</h1>
-	<a href="/index.html">Regresar al index</a>
+	<a href="HTMLs/indexp.html">Regresar al Inicio</a>
 </body>
 </html>

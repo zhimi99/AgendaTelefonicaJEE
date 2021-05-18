@@ -1,0 +1,176 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: century gothic;
+	text-align: center;
+}
+
+h1 {
+	text-align: center;
+	color: black;
+}
+h3 {
+	text-align: center;
+	color: aqua;
+}
+
+body {
+	background-image: url(../IMG/fondolegal02.jpg);
+	width: 100%;
+	height: 100% vh;
+	background-size: cover;
+}
+
+p {
+	text-align: right;
+	font-size: 0.5cm;
+	color: black;
+}
+
+
+
+#div1 {
+	float: left;
+	margin-top: 200px;
+	width: 1348px;
+}
+
+#div1-1 {
+	float: left;
+	width: 500px;
+	margin-left: 150px;
+}
+
+#div1-2 {
+	float: left;
+	width: 10px;
+	margin-left: 50px;
+	
+}
+
+#div2 {
+	background-color: menu;
+	float: left;
+	width: 1348px;
+	margin-top: 50px;
+}
+
+#div3 {
+	float: left;
+	width: 1348px;
+	text-align: center;
+	margin-top: 50px;
+}
+
+#div4 {
+	background-color: menu;
+	float: left;
+	width: 1348px;
+	text-align: center;
+	margin-top: 50px;
+}
+
+#div4-1 {
+	float: left;
+	width: 50px;
+	margin-left: 60px;
+}
+
+#div4-2 {
+	float: left;
+	margin-top: 50px;
+	margin-left: 100px;
+}
+
+#div5 {
+	float: left;
+	margin-top: 50px;
+	width: 1348px;
+}
+
+p{
+	text-align: justify;
+	font-size: 20px;
+	color:white;
+}
+
+#imagen{
+	width: 120px;
+	height: 120px;
+	padding: 15px;
+	margin-left: 20px;
+	border-radius: 50%;
+	
+}
+
+#menuid{
+	float: left;
+	margin-top: 50px;
+	background-image:url(../IMG/fondolegal02.jpg);
+	width: 1348px;
+}
+
+#div3-2 {
+	float: left;
+	width: 400px;
+	margin-left: 80px;
+	border-top: 1px solid #369;
+    border-bottom: 3px double #369;
+}
+
+#div3-1 {
+	float: left;
+	margin-left: 200px;
+	margin-right: 100px;
+	width: 400px;
+	border-top: 1px solid #369;
+    border-bottom: 3px double #369;
+}
+
+form {
+	float:left;
+	border-top: 1px solid #369;
+    border-bottom: 3px double #369;
+    padding: 9px;
+    margin-left: 120px;
+    width: calc(100% - 500px);
+}
+
+input {
+	width: calc(100% - 10px);
+	padding: 9px;
+	float: left;
+	margin: inherit;
+	margin-top: 5px;
+	font-size: 15px;
+	margin-left: 10px;
+}
+
+input[type='submit']{
+	background-color: #48e;
+	color: #fff;
+	width: 100px;
+	margin: 0 5%;
+	margin-top: 22px;
+	border: none;
+}
+textarea {
+	width: calc(100% - 10px);
+	text-align: left;
+    padding: 5px;
+	height: 400px;
+	margin-top: 22px;
+	float: left;
+	margin-left: 10px;
+}
+#main-header {
+	background-color: menu;
+	width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
+	left: 0; /* Posicionamos la cabecera al lado izquierdo */
+	top: 0; /* Posicionamos la cabecera pegada arriba */
+	position: fixed; /* Hacemos que la cabecera tenga una posición fija */
+}
+
+
+
+	

@@ -18,7 +18,7 @@
 	<p>Operadora: ${t.operadora}</p>
 	<p>Usuario: ${t.usuario}</p>
 	
-	<a href="/AgendaTelefonicaJEE/index.html">Regresar al index</a>
+	<a href="/AgendaTelefonicaJEE/HTMLs/index.html">Regresar al index</a>
 	
 </body>
 </html>

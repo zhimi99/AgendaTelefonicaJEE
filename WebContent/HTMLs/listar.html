@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Listar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/formulario.css">
+</head>
+
+<body>
+
+    <div >
+		<ul class="nav nav-pills" role="tablist">
+			<li><a href="index.html">INICIO</a></li>
+            <li><a href="agrega2.html">AGREGAR TELEFÓNO</a></li>
+            <li><a href="listar.html">BUSCAR</a></li>
+		</ul>
+	
+	</div>
+
+   <h3 id="titulo"><img src="IMG/telefono.png"> LISTA DE TELEFONOS</h3>
+       <form id="form2" action="/AgendaTelefonicaJEE/BuscarTelefonoController" method="post">
+		   <div class="col">
+        	    <p>Cedula / Correo:
+        	         <input type="text" placeholder="ingrese su Cedula / Correo" name="buscar">
+        	         <input id="menu03" type="submit" value="BUSCAR">
+        	     </p>
+      	   </div>
+	   </form>
+	
+	   <br/>
+	   <br/>
+    <form id="form2" action="" method="post">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>NOMBRE</th>
+            <th>APELLIDO</th>
+            <th>CEDULA</th>
+            <th>TELEFONO</th>
+            <th>OPERADORA</th>
+            <th>SETING</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+            <td>
+				<ul>
+					<a href="actualiza.html"><img src="IMG/actualizar.png">ACTUALIZAR</a>
+			    	<a href="agrega.html"><img src="IMG/eliminar.png">ELIMINAR</a>
+				</ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>      
+   </form>
+</body>
+</html>

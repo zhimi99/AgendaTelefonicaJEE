@@ -1,0 +1,25 @@
+
+#menuL li>a{
+	background-color: #000;
+	padding: 5px;
+	display: block;
+	text-decoration: none;
+	min-width: 100px;
+	margin-top: 10px;
+	margin-right: auto;
+  }
+
+  #menuL  li>a:hover{
+	color: #000;
+	background-color: #000;
+  }
+  #menuL>li{
+	float: left;
+	text-align:center
+  }
+  #menuL>li>ul{
+	display: none;
+  }
+  #menuL>li:hover>ul {
+	display:block;
+  }

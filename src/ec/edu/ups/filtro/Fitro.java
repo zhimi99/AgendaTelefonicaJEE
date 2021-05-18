@@ -49,7 +49,7 @@ public class Fitro implements Filter{
 				chain.doFilter(request, response);
 			} catch (Exception e) {
 				// TODO: handle exception
-				System.out.println("Erro en ec.edu.ups.filtro validando login: "+e.getMessage());
+				System.out.println("Error filtro validando login: "+e.getMessage());
 				session.invalidate();
 				((HttpServletResponse)response).sendRedirect("/AgendaTelefonicaJEE/HTMLs/login.html");
 			}

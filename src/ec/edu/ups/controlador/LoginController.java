@@ -3,14 +3,12 @@ package ec.edu.ups.controlador;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import ec.edu.ups.dao.DAOFactory;
 import ec.edu.ups.dao.TelefonoDAO;
 import ec.edu.ups.dao.UsuarioDAO;
@@ -51,26 +49,24 @@ public class LoginController extends HttpServlet {
 
 		try {
 			
-			String mail = String.valueOf(request.getParameter("mail"));
-			String pass = String.valueOf(request.getParameter("pass"));
+			String correo = String.valueOf(request.getParameter("correo"));
+			String clave = String.valueOf(request.getParameter("clave"));
 
-			System.out.println("Iniciando...");
 			HttpSession session = request.getSession(true);
 			List<Usuario> list = new ArrayList<Usuario>();
 			list = usuarioDao.find();
 			
-			System.out.println("Listado " + list.toString());
 			url = "/index.html";
 			if (list != null) {
 				for (Usuario usuario : list) {
 					System.out.println("Usuario allado" + usuario.toString());
-					System.out.println("Datos ingresados email: " + mail + " pass: " + pass);
-					System.out.println(
-							"Datos recuperados email: " + usuario.getCorreo() + " pass: " + usuario.getClave());
+					System.out.println("Datos ingresados correo: " + correo + " clave: " + clave);
 
-					if (usuario.getClave().equals(pass) && usuario.getCorreo().equals(mail)) {
-						System.out.println("Logiado");
+					if (usuario.getClave().equals(clave) && usuario.getCorreo().equals(correo)) {
+						System.out.println("Usuario Logueado Correctamente");
 						session.setAttribute("usuario", usuario);
+						url = "/JSPs/inicio_usuario.jsp";
+						response.sendRedirect(url);
 
 						if (session.isNew()) {
 							session.setAttribute("accesos", 1);
@@ -90,17 +86,17 @@ public class LoginController extends HttpServlet {
 						url = "/JSPs/inicio_usuario.jsp";
 						System.out.println(url);
 						break;
-						// response.sendRedirect(url);
+						
 					}else {
 						session.invalidate();
-						System.out.println("Usuario o clave incorrecta.");
-						url = "/index.html";
+						System.out.println("DATOS incorrecta.");
+						url = "HTMLs/index.html";
 				}
 			} 
 			}else {
 				session.invalidate();
 				System.out.println("Usuario o clave incorrecta.");
-				url = "/index.html";
+				url = "HTMLs/index.html";
 		}
 
 		} catch (Exception e) {
